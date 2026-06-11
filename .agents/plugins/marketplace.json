@@ -1,0 +1,7 @@
+{
+  "plugins": [
+    { "id": "maintainer", "name": "Maintainer", "order": 10, "enabled": true },
+    { "id": "time-traveler", "name": "Time traveler", "order": 20, "enabled": true },
+    { "id": "on-call-engineer", "name": "On-call engineer", "order": 30, "enabled": true }
+  ]
+}
