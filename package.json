@@ -1,0 +1,19 @@
+{
+  "name": "rearview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "npm run build && node --test dist/tests/**/*.test.js",
+    "clean": "rm -rf dist dist-tests packages/*/dist apps/*/dist"
+  },
+  "bin": {
+    "rearview": "./packages/cli/dist/index.js"
+  },
+  "devDependencies": {}
+}
