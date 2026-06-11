@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "packageManager": "npm@11.4.2",
+  "engines": {
+    "node": ">=24"
+  },
   "workspaces": [
     "packages/*",
     "apps/*"
@@ -10,10 +14,18 @@
   "scripts": {
     "build": "tsc -b",
     "test": "npm run build && node --test dist/tests/**/*.test.js",
-    "clean": "rm -rf dist dist-tests packages/*/dist apps/*/dist"
+    "clean": "rm -rf dist dist-tests packages/*/dist apps/*/dist",
+    "cli": "npm run build && node dist/packages/cli/src/index.js",
+    "story": "npm run build && node dist/packages/cli/src/index.js story",
+    "export": "npm run build && node dist/packages/cli/src/index.js export",
+    "serve": "npm run build && node dist/packages/cli/src/index.js serve",
+    "start": "npm run serve"
   },
   "bin": {
-    "rearview": "./packages/cli/dist/index.js"
+    "rearview": "./dist/packages/cli/src/index.js"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^6.0.3"
+  }
 }
